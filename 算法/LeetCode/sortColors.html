@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+</head>
+<body>
+    <script>
+        // //快速排序
+        // var sortColors = function (nums){
+        //     quick(nums,0,nums.length-1);
+        // }
+
+        // function quick(nums,left,right){
+        //     if(nums.length > 1){
+        //         var index = partition(nums,left,right);
+        //         if(left < index-1){
+        //             quick(nums,left,index-1);
+        //         }
+        //         if(index < right){
+        //             quick(nums,index,right);
+        //         }
+        //     }
+        // }
+
+        // function partition(nums,left,right){
+        //     var pivot = nums[Math.floor((left+right)/2)];
+        //     var i = left;
+        //     var j = right;
+        //     while(i<=j){
+        //         while(nums[i] < pivot){
+        //             i ++;
+        //         }
+        //         while(nums[j] > pivot){
+        //             j --;
+        //         }
+        //         if(i<=j){
+        //             var t = nums[i];
+        //             nums[i] = nums[j];
+        //             nums[j] = t;
+        //             i ++;
+        //             j --;
+        //         }   
+        //     }
+        //     return i;
+        // }
+
+    //三根指针
+    function sortColors(nums){
+        var l = 0;//指向0
+        var r = nums.length-1;//指向2
+        var i = 0;
+        while(i<=r){
+            if(nums[i] == 0){
+                var t = nums[i];
+                nums[i++] = nums[l];
+                nums[l++] = t;
+            }else if(nums[i] == 1){
+                i++;
+            }else{
+                var t = nums[i];
+                nums[i] = nums[r];
+                nums[r--] = t;
+            }
+        }
+    }
+    nums = [1,2,0];
+    sortColors(nums);
+    alert(nums);
+</script>
+</body>
+</html>

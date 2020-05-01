@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Page Title</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+  <script>
+
+    var removeElement = function(nums, val) {
+      let i = 0;//记录已存放的最后一个符合元素的下标
+      let j = 0;
+      while(j<nums.length){
+        console.log(j);
+        console.log(nums[j]);
+          if(nums[j] != val){
+              nums[i] = nums[j];
+              i ++;
+              j ++;
+              console.log(nums[i]);
+              console.log(nums[j]);
+          }else{
+              j ++;
+          }
+      }
+      console.log(nums);
+      return i;
+    };
+
+    let nums =[3,2,2,3];
+    let val = 3;
+    removeElement(nums,val);
+
+
+  </script>
+</body>
+</html>

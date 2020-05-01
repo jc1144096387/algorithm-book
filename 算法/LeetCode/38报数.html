@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Page Title</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+  <script>
+  /**
+ * @param {number} n
+ * @return {string}
+ */
+var countAndSay = function(n) {
+    let str = '1';
+    let result = '';
+    for(let i = 2; i < n+1; i ++){
+        let count = 1;
+        let result = '';
+        for(let j = 0; j < str.length; j ++){
+            if(str[j] == str[j+1]){
+                count ++;
+            }else{
+                result = result + count + str[j];
+                count = 1;
+                console.log(i+"."+j+":"+result);
+                console.log(i+"."+j+":"+count +"-"+str[j]);
+            }
+        }
+        str = result;
+        console.log(i+":"+str)
+    }
+    return str;
+};
+
+console.log(countAndSay(6));
+</script>
+</body>
+</html>

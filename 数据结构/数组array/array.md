@@ -1,0 +1,40 @@
+# 数组
+数组用来存储同一种数据类型的值。当然，在JavaScript中，一个数组也可以存储不同数据类型的值，但最好不要那么做，因为其他大多数语言都没有这个能力。
+## 数组基础(base.js)
+介绍js中数组的基础知识点，如数组的基础用法、常用方法和属性。
+- 创建和初始化数组
+- 访问元素和迭代（遍历）数组
+- 添加元素
+    + push()
+    + unshift()
+- 删除元素
+    + pop()
+    + shift()
+- 在任意位置添加或删除元素
+    + splice()
+- 二维和多维数组
+- JavaScript的数组方法
+    + slice()
+    + concat()
+    + every()
+    + some()
+    + forEach()
+    + map()
+    + filter()
+    + reduce()
+    + entries()
+    + keys()
+    + values()
+    + Array.from()
+    + Array.of()
+    + fill()
+    + copyWithin()
+    + reverse()
+    + sort()
+    + indexOf()
+    + lastIndexOf()
+    + includes()
+    + toString()
+    + valueOf()
+    + join()
+- 类型数组

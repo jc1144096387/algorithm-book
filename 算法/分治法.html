@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>插入排序和合并排序</title>
+</head>
+
+<body>
+  <script>
+    let A = [3, 0, 2, 1, 8, 9, 4, 6, 5, 7];
+
+    // 二分查找(数组已排序)
+    function binarySerach(A, value, l, r) {
+      if (l > r) {
+        return null;
+      }
+      let mid = Math.floor((l + r) / 2);
+      if (A[mid] == value) {
+        return mid;
+      } else if (A[mid] < value) {
+        return binarySerach(A, value, mid + 1, r);
+      } else {
+        return binarySerach(A, value, l, mid - 1);
+      }
+    }
+    console.log(binarySerach(arr, 3, 0, arr.length - 1));
+
+    // 一维版本最近点对（点以升序排列）
+    let points = [-2, 3, 11, 15, 20, 26, 222];
+    function findMinDistance(points, p, q) {
+      if (q - p == 1) {
+        return points[q] - points[p];
+      } else if (q - p > 1) {
+        let mid = Math.floor((p + q) / 2);
+        let m1 = findMinDistance(points, p, mid);
+        let m2 = findMinDistance(points, mid + 1, q);
+        let m3 = points[mid + 1] - points[mid];
+        return Math.min(m1, m2, m3);
+      } else {
+        return Infinity;
+      }
+    }
+    console.log(findMinDistance(points, 0, Math.floor(points.length / 2), points.length));
+    // 分治法计算二叉树层数
+    let treeNode = function (value) {
+      this.value = value;
+      this.left = null;
+      this.right = null;
+    }
+    let tree = new treeNode(1);
+    tree.left = new treeNode(2);
+    tree.left.left = new treeNode(3);
+    tree.left.right = new treeNode(4);
+    tree.left.right.right = new treeNode(5);
+
+    let tree2 = new treeNode(1);
+
+    function calculateTreeDepth(tree){
+      if(tree){
+        return Math.max(calculateTreeDepth(tree.left)+1,calculateTreeDepth(tree.right)+1);
+      }
+      return 0;
+    }
+    console.log(calculateTreeDepth(tree),calculateTreeDepth(tree2));
+
+  </script>
+</body>
+
+</html>
